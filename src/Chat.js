@@ -22,9 +22,6 @@ function Chat() {
 const [seed, setSeed] = useState("");
 
 
-//to get the chat id now we will use useparams
-//hum chat id se hi chatting dikhayenge user ki
-//use param se hume wo url mil jaata hai jo hume link to se link milega wo store hojaata hai
 
 const { roomId } = useParams();
 
@@ -40,18 +37,13 @@ const [{user}, dispatch] = useStateValue();
 
 
 
-//whenever room id will be changed it willl get triggered---
 
 useEffect(() => {
-  
-  //if roomid exists then we will save the name of the chatgroup in the setroomname
+
   if(roomId) {
   db.collection('rooms').doc(roomId).onSnapshot(snapshot => (setRoomName( snapshot.data().name)))
   }
 
-  //thhe messages are getting into setmessages and it is array so map can be used
- //orderby means message will be arranged in ascending order accorfing to the timestamp
-//also we have mapped the messages so every message will be shown accordingly
   db.collection('rooms').doc(roomId).collection('messages').orderBy('timestamp', 'asc').onSnapshot(snapshot =>(
     setMessages(snapshot.docs.map((doc) => doc.data()))
   ))
@@ -100,8 +92,7 @@ db.collection('rooms').doc(roomId).collection('messages').add({
 {/* //now the rooom name is coming from firebase here */}
      <h3>{roomName}</h3>
      <p>
-       {/* //last seen is the timestamp of the last message sent by the user, so we did
-       // message.length-1 */}
+      
        
        last seen{" "}
        {new Date(
@@ -131,19 +122,17 @@ db.collection('rooms').doc(roomId).collection('messages').add({
 
 {messages.map(message => (
 
-//acc to me it means ki chat message ki class to rahegi hi pr agr message name humara google waale naam se same hoogya
-//then it will be true and chat receiver bhi true hi hai to chat receiver bhi activate hojayegi
+
 <p className={`chat__message ${message.name === user.displayName && `chat__reciever`}`}>
 
-{/*///FOR THE NAME ON RHS WE DIDI THIS */}
 
 <span className='chat__name'>{message.name}</span>
   
-  {/* FOR THE MESSAGES THAT WE GET FROM MAP FUNCTON WE USE THIS */}
+ 
 
   {message.message}
   
-  {/* //THIS IS A GOOD PRACTICE FOR GETTING THE timestamp */}
+ 
 
   <span className='chat__timestamp'> {new Date(message.timestamp?.toDate()).toUTCString()}</span>
   
@@ -164,11 +153,10 @@ db.collection('rooms').doc(roomId).collection('messages').add({
 
 <InsertEmoticon />
 
-{/* //to have the input fnctionality I wrote form */}
+
 
 <form> 
   
-  {/* //whenever the value of the inpit box changes, it is stored in input variable with the help of setInput */}
 
   <input value={input} onChange={e => {
   setInput(e.target.value) 
