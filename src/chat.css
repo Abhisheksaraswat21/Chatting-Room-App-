@@ -1,0 +1,137 @@
+.chat {
+    /* //NOW THE REMAINING 65 % OF THE SCREEN JO CHAT SECTUION KE LIYE HAI WO FLEX 0.65 SE USE HORI HAI */
+
+    flex:0.65;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat__header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+
+.chat__headerInfo {
+    /* flex row hai to flex 1 se saraa space lelia aur ab jo bhi insert hoga wo rightmost end me hoga */
+
+    flex: 1;
+    padding-left: 20px;
+}
+
+
+.chat__headerInfo > h3 {
+
+    margin-bottom: 3px;
+    font-weight: 500;
+
+}
+
+.chat__headerInfo > p {
+    color: gray;
+} 
+
+
+
+
+.chat__message{
+    position: relative;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #ffffff;
+    /* //by this way it will fit the box according to the desired message */
+
+    width: fit-content;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 30px;
+
+}
+
+
+.chat__reciever {
+    margin-left: auto;
+    background-color: #dcf8c6;
+}
+
+
+
+.chat__name {
+    position: absolute;
+    top: -15px;
+    font-weight: 800;
+    font-size: xx-small;
+}
+
+
+.chat__timestamp {
+    margin-left: 10px;
+    font-size: xx-small;
+}
+
+.chat__headerRight {
+    
+display: flex; 
+justify-content: space-between; 
+min-width: 100px;
+
+}
+
+
+.chat__body {
+
+    /* //chat ka flex-direction:  is clumn to ab chat body niche aayegi --- */
+
+    flex: 1;
+/* //if flex is not equal to 1 then background image will  not be displayed in the remaining space  */
+
+background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+
+background-repeat: repeat;
+padding: 30px;
+background-position: center;
+
+overflow: scroll;
+
+
+}
+
+.chat__footer {
+    display: flex;
+    /* //we want that each children to  be spaced apart */
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    border-top: 1px solid lightgray;
+
+}
+
+.chat__footer > form {
+    flex: 1;
+    display: flex;
+  
+}
+
+
+.chat__footer > form >input {
+
+    flex: 1;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+
+}
+
+.chat__footer > form > button {
+    /* //this way the functionality if the button exists but it is hidden then */
+    display: none;
+}
+
+.chat__footer > .MuiSvgIcon-root {
+padding: 10px;
+color: gray;
+
+}

@@ -1,0 +1,78 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  /* //ab ek ke niche ek aayega...wrna pehle by default row me hota h flex */
+  flex: 0.35;
+  /* //0.35 means only 35% of the wole width will be used */
+}
+
+.sidebar__search {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  height: 39px;
+  padding: 10px;
+}
+
+.sidebar__searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  height: 35px;
+  border-radius: 20px;
+}
+
+.sidebar__searchContainer > .MuiSvgIcon-root {
+  /* //this is for the search icon */
+  color: grey;
+  padding: 10px;
+}
+
+.sidebar__searchContainer > input {
+  /* //this is applied to input filed in the search container */
+  border: none;
+  margin-left: 10px;
+  width: 80%;
+}
+
+.sidebar__header {
+  display: flex;
+  /* //everything will be in row now as it is in flex */
+  justify-content: space-between;
+  padding: 20px;
+  border-right: 1px solid lightgray;
+}
+
+.sidebar__headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 10vw;
+  /* //space between se beech me spacing ni aari thi icons ke
+    to maine isme min width dia to spacing lag gai
+    status chat aur more wale option pe */
+}
+
+.sidebar_headerRight > .MuiSvgIcon-root {
+  /* .MuiSvgIcon-root this is cast name given to the icons here */
+
+  margin-right: 2vw;
+  font-size: 24px !important;
+}
+
+
+
+/* //chats in the side bar  */
+
+.sidebar__chats {
+    /* sabe upar side bar me humne flex direction column di hai to uske hisaab se 
+    yha pe flex 1 ka mtlb hai ki niche ke saare space isme aajayenge  */
+
+    flex: 1;
+ background-color: white;
+ 
+ overflow: scroll;
+
+
+}

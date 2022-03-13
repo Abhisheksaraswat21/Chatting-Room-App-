@@ -1,0 +1,21 @@
+.app {
+  /* //ye display aur place items ki help se hum ye kaam kr skte hai ki box bilkul 
+center me aagya page without telling left and right margin
+
+ab app_body me esa hoga ki beech me aayegi
+ */
+
+  display: grid;
+  place-items: center;
+  background-color: #dadbd3;
+  height: 100vh;
+}
+
+.app_body {
+  background-color: #ededed;
+  margin-top: -50px;
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 1);
+}
