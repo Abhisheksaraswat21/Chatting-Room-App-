@@ -1,4 +1,3 @@
-//its name is in capital as it is a component
 
 import { Avatar, Icon, IconButton } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
