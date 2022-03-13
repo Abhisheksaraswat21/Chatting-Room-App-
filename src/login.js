@@ -6,9 +6,7 @@ import { useStateValue } from './StateProvider'
 import { actionTypes } from './reducer'
 function Login() {
 
-//we took usestate value from stateprovider 
 
-//the first part can be used as a destructorlike {user, }
 
   const [{}, dispatch] = useStateValue();
 
@@ -21,8 +19,7 @@ auth.signInWithPopup(provider).then((result) =>
   {
     dispatch({
  type: actionTypes.SET_USER,
- //user got the value from the data base here
- //noe we can destrcut user value anywheere we want ... like we did now in app.js
+
  user: result.user,
     })
   })
@@ -43,7 +40,6 @@ auth.signInWithPopup(provider).then((result) =>
 
 </div>
 
-{/* //THIS IS BUTTON FOR SIGININ AND WE HAVE ATTACHED FIREBASE GOOGLE LOGIN--- */}
 
 <Button onClick={signIn}>Signin with google </Button>
 </div>
