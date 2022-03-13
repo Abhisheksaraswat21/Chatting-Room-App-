@@ -11,15 +11,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 function App() {
 
 const [{user}, dispatch] =  useStateValue();
-  //this is for checking whether user is logged in or not ---
-
-
   
-// const [user, setUser] = useState(null);
-
-
-//now we are getting users from login.js 
-
   return (
     //BEM maning conventions
 
