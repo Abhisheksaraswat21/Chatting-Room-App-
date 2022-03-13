@@ -16,7 +16,6 @@ import { useStateValue } from './StateProvider';
 function Sidebar() {
 
           
-//we are giving an empty array to the room initially ...rooms will be fetched from firebase
  const [rooms, setRooms] = useState([]);
 
 
@@ -28,8 +27,7 @@ function Sidebar() {
 
 
 useEffect(()=> {
-    //snapshot takes th picture of the collection 'rooms' in the database.
-    //db is a variabke defined in the firebase.js
+ 
 const unsubscribe = db.collection('rooms').onSnapshot(snapshot => 
 setRooms(snapshot.docs.map(doc => 
 
@@ -46,18 +44,15 @@ return () => {
     unsubscribe();
 }
 },[]);
-//end me [] means run this only once when the component is  loaded
 
     return (
         <div className='sidebar'> 
 
  <div className="sidebar__header">
 
-     {/* //now in the avatar it will show the image of the logged in user */}
 
 <Avatar src={user?.photoURL} />
 
-{/* //avatar is the symbol of user..jese profile pic dikhti hai choti se */}
 
 <div className='sidebar__headerRight'>
 
@@ -67,11 +62,6 @@ return () => {
 <IconButton > <ChatIcon /> </IconButton>
 <IconButton > <MoreVertIcon /></IconButton>
 
-{/* ye saare icons humne lagaye hai..inko clickable bnaane ke liye humne IconButton ka use kia hai
-this is with the help of material ui */}
-
-{/* //ye saare icons hai jo humne material ui install krne ke baad use kre and fir humne 
-//inko use krne ke liye import bhi kra hai upar */}
 
 </div>
  </div>
@@ -81,10 +71,8 @@ this is with the help of material ui */}
     <div className='sidebar__searchContainer'>
 
     <SearchOutlined/>  
-    {/* //ye search icon hai  */}
 
 <input placeholder='Search or start a new chat' type ='text' />
-{/* ye input box banaya hai  */}
 
 
     </div>
@@ -100,10 +88,9 @@ this is with the help of material ui */}
     <SidebarChat />  */}
 
 
-{/* THESE ARE THE NAME OF THE ROOMS WE ARE GETTING FROM FIREBASE IN THE VARIABLE ROOM IN USEEFFECT */}
+
 
 {rooms.map(room => (
-    //in every room we are passing props as keys id and name 
     <SidebarChat key={room.id} id={room.id} name={room.data.name} />
 ))}
 
