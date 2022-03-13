@@ -1,7 +1,4 @@
-// import React from "react";
-// import ReactDOM from "react-dom";
-// import App from "./App";
-// import firebase from "firebase/app";
+
 
 
 //FROM V9 FIREBASE IS IMPORTED LIKE THIS---
@@ -23,16 +20,13 @@ const firebaseConfig = {
     measurementId: "G-36L5MFMHR3"
   };
 
-//we initialise the app here and pass the fire bae config here ....we are storing it in firebase app
   const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 
-  //it will acces the firestore instance
 const db = firebaseApp.firestore();
 
 const auth =  firebase.auth();
 
-//this is for google authentication
 const provider =  new firebase.auth.GoogleAuthProvider();
 
 
