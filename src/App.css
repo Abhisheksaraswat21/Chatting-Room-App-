@@ -1,9 +1,5 @@
 .app {
-  /* //ye display aur place items ki help se hum ye kaam kr skte hai ki box bilkul 
-center me aagya page without telling left and right margin
-
-ab app_body me esa hoga ki beech me aayegi
- */
+  
 
   display: grid;
   place-items: center;
